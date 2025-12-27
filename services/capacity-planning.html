@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimix Power - Capacity Expansion</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../assets/finallogo.png" alt="Optimix Power" class="logo-image">
+            <div class="logo-text">Optimix Power <span>Future Energy Solutions</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn active">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="p2x.html">P2X Simulator</a>
+                    <a href="bess.html">BESS Revenue</a>
+                    <a href="microgrid.html">Microgrid Design</a>
+                    <a href="capacity-planning.html">Capacity Planning</a>
+                    <a href="solar-wind.html">Solar & Wind</a>
+                </div>
+            </div>
+            <a href="../company/case-studies.html">Case Studies</a>
+            <a href="../articles.html">Articles</a>
+        </div>
+        <a href="../contact.html" class="btn-contact">Contact Us</a>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge" style="color: #ff5252;"><i class="fa-solid fa-chart-line"></i> Grid Expansion</div>
+        <h1>Capacity Expansion Planning</h1>
+        <p>Planning the grid of 2035 today. We use Multi-Stage Stochastic Programming to model transmission and generation investments under deep uncertainty.</p>
+    </header>
+
+    <section class="section">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            
+            <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 60px;">
+                <div style="flex: 1;">
+                    <h2 class="section-title">The "Load Growth" Shock</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563;">
+                        Data centers and AI are projected to double power demand in specific nodes of the ERCOT grid by 2030. 
+                        Traditional deterministic planning fails to capture this volatility.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-top: 20px;">
+                        Our proprietary <strong>Stochastic Expansion Model</strong> integrates large-scale load growth scenarios directly into the transmission planning problem (TEP).
+                    </p>
+                </div>
+                <div style="flex: 1; background: #f1f5f9; height: 300px; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 2px dashed #cbd5e1;">
+                    <span style="color: #94a3b8; font-weight: 600;">[ Insert Heatmap of Texas Grid Nodes ]</span>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: #0f172a;">Our Mathematical Edge</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+                <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 10px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: #e0f2fe; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-dice" style="color: #0088cc; font-size: 1.2rem;"></i>
+                    </div>
+                    <h4 style="margin-bottom: 10px; color: #0f172a;">Stochastic Programming</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">We don't plan for the "Average." We optimize for the worst-case scenarios and extreme weather events.</p>
+                </div>
+                <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 10px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: #fef3c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-bolt" style="color: #d97706; font-size: 1.2rem;"></i>
+                    </div>
+                    <h4 style="margin-bottom: 10px; color: #0f172a;">DC-OPF Constraints</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">Full inclusion of Kirchhoff's laws and transmission line limits to ensure physical feasibility.</p>
+                </div>
+                <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 10px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-layer-group" style="color: #16a34a; font-size: 1.2rem;"></i>
+                    </div>
+                    <h4 style="margin-bottom: 10px; color: #0f172a;">Decomposition</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">Utilizing Benders Decomposition to solve massive-scale problems with thousands of nodes.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align: center; color: white;">Why It Matters: A Simplified Case</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">
+                Comparing two investment strategies for a simplified 5-node test system under uncertain Data Center load growth.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,82,82,0.3); padding: 30px; border-radius: 12px;">
+                    <h3 style="color: #ff5252; margin-bottom: 15px;">Case A: Deterministic Planning</h3>
+                    <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 20px;">
+                        The utility plans transmission lines based on the "Average Expected Load" (Base Case).
+                    </p>
+                    
+                    <ul style="margin-bottom: 20px; font-size: 0.9rem; color: #94a3b8;">
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #ff5252;"></i> <strong>Outcome:</strong> Load spikes 20% higher than expected.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #ff5252;"></i> <strong>Result:</strong> Congestion occurs on Line 2-3.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #ff5252;"></i> <strong>Cost:</strong> $5M in re-dispatch costs and load shedding.</li>
+                    </ul>
+
+                    <div style="background: rgba(255,82,82,0.1); padding: 10px; border-radius: 6px; text-align: center;">
+                        <span style="color: #ff5252; font-weight: 700;">Total System Cost: $115M</span>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(118,255,3,0.3); padding: 30px; border-radius: 12px;">
+                    <h3 style="color: #76ff03; margin-bottom: 15px;">Case B: Optimix Stochastic Model</h3>
+                    <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 20px;">
+                        We optimize investment considering 100+ scenarios of load volatility and weather events.
+                    </p>
+                    
+                    <ul style="margin-bottom: 20px; font-size: 0.9rem; color: #94a3b8;">
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #76ff03;"></i> <strong>Outcome:</strong> Model proactively upgrades Line 2-3.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #76ff03;"></i> <strong>Result:</strong> No congestion despite load spike.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #76ff03;"></i> <strong>Cost:</strong> Slightly higher CAPEX, but zero penalty costs.</li>
+                    </ul>
+
+                    <div style="background: rgba(118,255,3,0.1); padding: 10px; border-radius: 6px; text-align: center;">
+                        <span style="color: #76ff03; font-weight: 700;">Total System Cost: $102M</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #64748b;">
+                *Savings of $13M achieved by avoiding high-cost recourse actions during extreme events.
+            </p>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Optimix Power Solutions.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

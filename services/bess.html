@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimix Power - BESS Revenue Stacking</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <style>
+        /* Calculator Styling */
+        .calc-container {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .calc-section { margin-bottom: 30px; }
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .calc-input { margin-bottom: 20px; }
+        .calc-input label { display: block; font-weight: 600; margin-bottom: 8px; color: #475569; font-size: 0.9rem; }
+        .calc-input input[type="range"] { width: 100%; height: 6px; background: #cbd5e1; border-radius: 5px; outline: none; cursor: pointer; }
+        .calc-input input[type="checkbox"] { cursor: pointer; margin-right: 8px; }
+        .calc-value { font-size: 0.85rem; color: #0088cc; font-weight: 700; margin-top: 5px; }
+
+        .result-box {
+            background: #0f172a; color: white; padding: 25px; border-radius: 8px; text-align: center; margin-top: 30px;
+        }
+        .result-number { font-size: 3rem; font-weight: 700; color: #76ff03; display: block; margin: 15px 0; }
+        .breakdown-item { text-align: center; }
+        .breakdown-value { font-size: 1.3rem; font-weight: 700; color: #fbbf24; display: block; }
+        .breakdown-label { font-size: 0.75rem; color: #cbd5e1; margin-top: 5px; }
+
+        .service-checkbox {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .service-checkbox:hover {
+            border-color: #0088cc;
+            background: #f8fafc;
+        }
+        .service-checkbox input:checked + label {
+            color: #0088cc;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../assets/finallogo.png" alt="Optimix Power" class="logo-image">
+            <div class="logo-text">Optimix Power <span>Future Energy Solutions</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn active">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="p2x.html">P2X Simulator</a>
+                    <a href="bess.html">BESS Revenue</a>
+                    <a href="microgrid.html">Microgrid Design</a>
+                    <a href="capacity-planning.html">Capacity Planning</a>
+                    <a href="solar-wind.html">Solar & Wind</a>
+                </div>
+            </div>
+            <a href="../company/case-studies.html">Case Studies</a>
+            <a href="../articles.html">Articles</a>
+        </div>
+        <a href="../contact.html" class="btn-contact">Contact Us</a>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge" style="color: #76ff03;"><i class="fa-solid fa-battery-full"></i> Battery Storage</div>
+        <h1>Revenue Stacking & Arbitrage</h1>
+        <p>Maximize ROI by co-optimizing Energy Arbitrage with Ancillary Services (Regulation, Spin, Non-Spin) in deregulated markets like ERCOT and CAISO.</p>
+    </header>
+
+    <section class="section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">Don't Leave Money on the Table</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-bottom: 30px;">
+                Most battery storage assets are underutilized. Simple arbitrage strategies (buy low, sell high) miss out on 30-40% of potential revenue available from 
+                <strong>Ancillary Services</strong>.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                <div style="padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <h3 style="color: #0f172a; margin-bottom: 10px;"><i class="fa-solid fa-chart-line" style="color:#0088cc;"></i> Price Forecasting</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">We integrate day-ahead and real-time price volatility forecasts to schedule optimal charge/discharge cycles.</p>
+                </div>
+                <div style="padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <h3 style="color: #0f172a; margin-bottom: 10px;"><i class="fa-solid fa-layer-group" style="color:#76ff03;"></i> Service Stacking</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Our algorithm dynamically bids into Regulation Up/Down and Contingency Reserve services when premiums are high.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align: center; color: white;">Day-Ahead Market Revenue Calculator</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">
+                Optimize your BESS bidding strategy across multiple revenue streams in the day-ahead market.
+            </p>
+
+            <div class="calc-container">
+                <!-- Battery Configuration -->
+                <div class="calc-section">
+                    <div class="section-header"><i class="fa-solid fa-battery-full"></i> Battery System Configuration</div>
+                    <div class="calc-grid">
+                        <div class="calc-input">
+                            <label>Power Capacity (MW)</label>
+                            <input type="range" id="bess-power" min="10" max="200" value="50" step="5" oninput="updateBESSRevenue()">
+                            <div class="calc-value"><span id="bess-power-val">50</span> MW</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Energy Capacity (MWh)</label>
+                            <input type="range" id="bess-energy" min="20" max="800" value="100" step="10" oninput="updateBESSRevenue()">
+                            <div class="calc-value"><span id="bess-energy-val">100</span> MWh</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Round-Trip Efficiency (%)</label>
+                            <input type="range" id="bess-rte" min="80" max="95" value="88" step="1" oninput="updateBESSRevenue()">
+                            <div class="calc-value"><span id="bess-rte-val">88</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Degradation Cost ($/MWh-cycle)</label>
+                            <input type="range" id="degradation-cost" min="1" max="10" value="5" step="0.5" oninput="updateBESSRevenue()">
+                            <div class="calc-value">$<span id="degradation-cost-val">5</span> /MWh-cycle</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Services Selection -->
+                <div class="calc-section">
+                    <div class="section-header"><i class="fa-solid fa-list-check"></i> Day-Ahead Market Services</div>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Select the services you want to participate in:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-arbitrage" checked onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>Energy Arbitrage</strong><br>
+                                <small style="color: #64748b;">Buy low, sell high in DA market</small>
+                            </span>
+                        </label>
+
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-manual-frr" checked onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>Manual FRR (mFRR)</strong><br>
+                                <small style="color: #64748b;">Manual frequency restoration reserve</small>
+                            </span>
+                        </label>
+
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-auto-frr" onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>Automatic FRR (aFRR)</strong><br>
+                                <small style="color: #64748b;">Automatic frequency restoration reserve</small>
+                            </span>
+                        </label>
+
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-fcr" onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>FCR (Primary Reserve)</strong><br>
+                                <small style="color: #64748b;">Frequency containment reserve</small>
+                            </span>
+                        </label>
+
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-congestion" onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>Congestion Management</strong><br>
+                                <small style="color: #64748b;">Grid congestion relief</small>
+                            </span>
+                        </label>
+
+                        <label class="service-checkbox">
+                            <input type="checkbox" id="service-capacity" onchange="updateBESSRevenue()">
+                            <span style="flex: 1;">
+                                <strong>Capacity Market</strong><br>
+                                <small style="color: #64748b;">Long-term capacity payments</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Market Parameters -->
+                <div class="calc-section">
+                    <div class="section-header"><i class="fa-solid fa-chart-line"></i> Market Conditions</div>
+                    <div class="calc-grid">
+                        <div class="calc-input">
+                            <label>Average DA Price (€/MWh)</label>
+                            <input type="range" id="avg-da-price" min="30" max="150" value="80" step="5" oninput="updateBESSRevenue()">
+                            <div class="calc-value">€<span id="avg-da-price-val">80</span> /MWh</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Price Volatility (%)</label>
+                            <input type="range" id="price-volatility" min="20" max="200" value="100" step="10" oninput="updateBESSRevenue()">
+                            <div class="calc-value"><span id="price-volatility-val">100</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>mFRR Capacity Price (€/MW/h)</label>
+                            <input type="range" id="mfrr-price" min="5" max="50" value="20" step="2" oninput="updateBESSRevenue()">
+                            <div class="calc-value">€<span id="mfrr-price-val">20</span> /MW/h</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>aFRR Capacity Price (€/MW/h)</label>
+                            <input type="range" id="afrr-price" min="10" max="80" value="35" step="2" oninput="updateBESSRevenue()">
+                            <div class="calc-value">€<span id="afrr-price-val">35</span> /MW/h</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>FCR Price (€/MW/h)</label>
+                            <input type="range" id="fcr-price" min="15" max="100" value="50" step="5" oninput="updateBESSRevenue()">
+                            <div class="calc-value">€<span id="fcr-price-val">50</span> /MW/h</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Capacity Payment (€/MW/month)</label>
+                            <input type="range" id="capacity-payment" min="1000" max="10000" value="5000" step="500" oninput="updateBESSRevenue()">
+                            <div class="calc-value">€<span id="capacity-payment-val">5000</span> /MW/month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revenue Breakdown Chart -->
+                <div style="background: white; padding: 25px; border-radius: 8px; margin-top: 30px; border: 1px solid #e2e8f0;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 20px; color: #0f172a; text-align: center;">
+                        <i class="fa-solid fa-chart-pie"></i> Annual Revenue Breakdown by Service
+                    </h3>
+                    <canvas id="revenueChart" style="max-height: 350px;"></canvas>
+                </div>
+
+                <!-- Results -->
+                <div class="result-box">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Total Annual Revenue</h3>
+                    <span class="result-number" id="total-revenue">€5,250,000</span>
+                    <p style="font-size: 0.85rem; color: #cbd5e1;">Day-Ahead Market Participation</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <div class="breakdown-item">
+                            <span class="breakdown-value" id="utilization-rate">65%</span>
+                            <div class="breakdown-label">Utilization Rate</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-value" id="cycles-per-year">320</span>
+                            <div class="breakdown-label">Cycles per Year</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-value" id="roi-years">4.2 years</span>
+                            <div class="breakdown-label">Simple Payback</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-contact" style="width: 100%; margin-top: 25px;" onclick="window.location.href='../contact.html'">
+                        Optimize My Bidding Strategy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Optimix Power Solutions.</p>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+
+</body>
+</html>

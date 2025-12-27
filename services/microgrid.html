@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimix Power - Microgrid Design</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script> 
+
+    <style>
+        /* Calculator Styling */
+        .calc-container {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .calc-section { margin-bottom: 30px; }
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .calc-input { margin-bottom: 20px; }
+        .calc-input label { display: block; font-weight: 600; margin-bottom: 8px; color: #475569; font-size: 0.9rem; }
+        .calc-input input[type="range"] { width: 100%; height: 6px; background: #cbd5e1; border-radius: 5px; outline: none; cursor: pointer; }
+        .calc-input input[type="radio"] { cursor: pointer; }
+        .calc-value { font-size: 0.85rem; color: #0088cc; font-weight: 700; margin-top: 5px; }
+
+        .result-box {
+            background: #0f172a; color: white; padding: 25px; border-radius: 8px; text-align: center; margin-top: 30px;
+        }
+        .result-number { font-size: 3rem; font-weight: 700; color: #76ff03; display: block; margin: 15px 0; }
+        .breakdown-item { text-align: center; }
+        .breakdown-value { font-size: 1.3rem; font-weight: 700; color: #fbbf24; display: block; }
+        .breakdown-label { font-size: 0.75rem; color: #cbd5e1; margin-top: 5px; }
+
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../assets/finallogo.png" alt="Optimix Power" class="logo-image">
+            <div class="logo-text">Optimix Power <span>Future Energy Solutions</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn active">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="p2x.html">P2X Simulator</a>
+                    <a href="bess.html">BESS Revenue</a>
+                    <a href="microgrid.html">Microgrid Design</a>
+                    <a href="capacity-planning.html">Capacity Planning</a>
+                    <a href="solar-wind.html">Solar & Wind</a>
+                </div>
+            </div>
+            <a href="../company/case-studies.html">Case Studies</a>
+            <a href="../articles.html">Articles</a>
+        </div>
+        <a href="../contact.html" class="btn-contact">Contact Us</a>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge" style="color: #ffd600;"><i class="fa-solid fa-network-wired"></i> Energy Resilience</div>
+        <h1>Microgrid Design & Optimization</h1>
+        <p>Ensure business continuity during grid outages. We model the optimal mix of Solar, Storage, and Backup Generators to minimize Loss of Load Probability (LOLP).</p>
+    </header>
+
+    <section class="section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">Survival Mode: Optimized.</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #4b5563; margin-bottom: 30px;">
+                When the main grid fails, your cost of downtime skyrockets. Traditional diesel generators are expensive to run and maintain. 
+                Our <strong>Hybrid Microgrid Model</strong> finds the "Sweet Spot" where solar and batteries reduce your diesel burn by up to 60%.
+            </p>
+
+            
+
+[Image of microgrid architecture diagram]
+
+
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                <div>
+                    <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: #ef4444; margin-bottom: 15px;"></i>
+                    <h4 style="color: #0f172a;">Risk Analysis</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">Quantifying outage risks using historical grid data.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-solar-panel" style="font-size: 2rem; color: #f59e0b; margin-bottom: 15px;"></i>
+                    <h4 style="color: #0f172a;">Asset Sizing</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">Balancing CAPEX vs. Operational Savings.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-server" style="font-size: 2rem; color: #3b82f6; margin-bottom: 15px;"></i>
+                    <h4 style="color: #0f172a;">Controller Logic</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">Writing the logic for islanding and load shedding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align: center; color: white;">Microgrid Design Calculator</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">
+                Optimize your hybrid microgrid configuration to minimize total system cost while meeting load requirements.
+            </p>
+
+            <div class="calc-container">
+                <!-- Load Profile Selection -->
+                <div class="calc-section" style="margin-bottom: 30px;">
+                    <div class="section-header" style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;">
+                        <i class="fa-solid fa-chart-line"></i> Load Profile
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <div class="calc-input" style="margin-bottom: 0;">
+                            <label>
+                                <input type="radio" name="load-profile" value="commercial" checked onchange="updateMicrogrid()" style="margin-right: 8px;">
+                                Commercial (Peak: 8AM-8PM)
+                            </label>
+                        </div>
+                        <div class="calc-input" style="margin-bottom: 0;">
+                            <label>
+                                <input type="radio" name="load-profile" value="industrial" onchange="updateMicrogrid()" style="margin-right: 8px;">
+                                Industrial (Baseload 24/7)
+                            </label>
+                        </div>
+                        <div class="calc-input" style="margin-bottom: 0;">
+                            <label>
+                                <input type="radio" name="load-profile" value="residential" onchange="updateMicrogrid()" style="margin-right: 8px;">
+                                Residential (Peak: 6PM-10PM)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calc-input" style="margin-top: 20px;">
+                        <label>Peak Load Demand (kW)</label>
+                        <input type="range" id="peak-load" min="50" max="1000" value="300" step="10" oninput="updateMicrogrid()">
+                        <div class="calc-value"><span id="peak-load-val">300</span> kW</div>
+                    </div>
+                </div>
+
+                <!-- Technology Capacities -->
+                <div class="calc-section" style="margin-bottom: 30px;">
+                    <div class="section-header" style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;">
+                        <i class="fa-solid fa-layer-group"></i> Technology Capacities
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="calc-input">
+                            <label>PV Capacity (kW)</label>
+                            <input type="range" id="pv-capacity-mg" min="0" max="500" value="200" step="10" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="pv-capacity-mg-val">200</span> kW</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Wind Capacity (kW)</label>
+                            <input type="range" id="wind-capacity-mg" min="0" max="500" value="100" step="10" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="wind-capacity-mg-val">100</span> kW</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>BESS Capacity (kWh)</label>
+                            <input type="range" id="bess-capacity" min="0" max="1000" value="400" step="50" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="bess-capacity-val">400</span> kWh</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Diesel Genset (kW)</label>
+                            <input type="range" id="diesel-capacity" min="0" max="500" value="150" step="10" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="diesel-capacity-val">150</span> kW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPEX Configuration -->
+                <div class="calc-section" style="margin-bottom: 30px;">
+                    <div class="section-header" style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;">
+                        <i class="fa-solid fa-dollar-sign"></i> CAPEX (Capital Costs)
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="calc-input">
+                            <label>PV CAPEX ($/kW)</label>
+                            <input type="range" id="pv-capex" min="500" max="1500" value="800" step="50" oninput="updateMicrogrid()">
+                            <div class="calc-value">$<span id="pv-capex-val">800</span> / kW</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Wind CAPEX ($/kW)</label>
+                            <input type="range" id="wind-capex" min="1000" max="2500" value="1500" step="50" oninput="updateMicrogrid()">
+                            <div class="calc-value">$<span id="wind-capex-val">1500</span> / kW</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>BESS CAPEX ($/kWh)</label>
+                            <input type="range" id="bess-capex" min="300" max="800" value="500" step="25" oninput="updateMicrogrid()">
+                            <div class="calc-value">$<span id="bess-capex-val">500</span> / kWh</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Diesel CAPEX ($/kW)</label>
+                            <input type="range" id="diesel-capex" min="400" max="1000" value="600" step="25" oninput="updateMicrogrid()">
+                            <div class="calc-value">$<span id="diesel-capex-val">600</span> / kW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPEX Configuration -->
+                <div class="calc-section" style="margin-bottom: 30px;">
+                    <div class="section-header" style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;">
+                        <i class="fa-solid fa-wrench"></i> OPEX (Annual Operating Costs)
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="calc-input">
+                            <label>PV O&M (% of CAPEX/year)</label>
+                            <input type="range" id="pv-opex" min="1" max="5" value="2" step="0.5" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="pv-opex-val">2.0</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Wind O&M (% of CAPEX/year)</label>
+                            <input type="range" id="wind-opex" min="2" max="6" value="3" step="0.5" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="wind-opex-val">3.0</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>BESS O&M (% of CAPEX/year)</label>
+                            <input type="range" id="bess-opex" min="1" max="4" value="2" step="0.5" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="bess-opex-val">2.0</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Diesel Fuel Price ($/liter)</label>
+                            <input type="range" id="diesel-fuel-price" min="0.5" max="2.5" value="1.2" step="0.1" oninput="updateMicrogrid()">
+                            <div class="calc-value">$<span id="diesel-fuel-price-val">1.2</span> / L</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Parameters -->
+                <div class="calc-section" style="margin-bottom: 30px;">
+                    <div class="section-header" style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;">
+                        <i class="fa-solid fa-cog"></i> System Parameters
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="calc-input">
+                            <label>PV Capacity Factor (%)</label>
+                            <input type="range" id="pv-cf-mg" min="15" max="30" value="22" step="1" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="pv-cf-mg-val">22</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Wind Capacity Factor (%)</label>
+                            <input type="range" id="wind-cf-mg" min="25" max="50" value="35" step="1" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="wind-cf-mg-val">35</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>BESS Round-Trip Efficiency (%)</label>
+                            <input type="range" id="bess-eff" min="80" max="95" value="88" step="1" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="bess-eff-val">88</span> %</div>
+                        </div>
+                        <div class="calc-input">
+                            <label>Diesel Efficiency (kWh/L)</label>
+                            <input type="range" id="diesel-eff" min="2.5" max="4.5" value="3.3" step="0.1" oninput="updateMicrogrid()">
+                            <div class="calc-value"><span id="diesel-eff-val">3.3</span> kWh/L</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 24-Hour Dispatch Chart -->
+                <div style="background: white; padding: 25px; border-radius: 8px; margin-top: 30px; border: 1px solid #e2e8f0;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 20px; color: #0f172a; text-align: center;">
+                        <i class="fa-solid fa-chart-bar"></i> 24-Hour Energy Dispatch
+                    </h3>
+                    <canvas id="dispatchChart" style="max-height: 400px;"></canvas>
+                </div>
+
+                <!-- Results -->
+                <div class="result-box" style="background: #0f172a; color: white; padding: 25px; border-radius: 8px; text-align: center; margin-top: 30px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Total System Cost (25-Year NPV)</h3>
+                    <span class="result-number" id="total-cost" style="font-size: 3rem; font-weight: 700; color: #76ff03; display: block; margin: 15px 0;">$850,000</span>
+                    <p style="font-size: 0.85rem; color: #cbd5e1;">Including CAPEX + Discounted OPEX</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <div class="breakdown-item" style="text-align: center;">
+                            <span class="breakdown-value" id="renewable-fraction-mg" style="font-size: 1.3rem; font-weight: 700; color: #fbbf24; display: block;">72.5%</span>
+                            <div class="breakdown-label" style="font-size: 0.75rem; color: #cbd5e1; margin-top: 5px;">Renewable Fraction</div>
+                        </div>
+                        <div class="breakdown-item" style="text-align: center;">
+                            <span class="breakdown-value" id="diesel-runtime" style="font-size: 1.3rem; font-weight: 700; color: #fbbf24; display: block;">850 hrs/yr</span>
+                            <div class="breakdown-label" style="font-size: 0.75rem; color: #cbd5e1; margin-top: 5px;">Diesel Runtime</div>
+                        </div>
+                        <div class="breakdown-item" style="text-align: center;">
+                            <span class="breakdown-value" id="bess-cycles" style="font-size: 1.3rem; font-weight: 700; color: #fbbf24; display: block;">320 cycles/yr</span>
+                            <div class="breakdown-label" style="font-size: 0.75rem; color: #cbd5e1; margin-top: 5px;">BESS Cycles</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-contact" style="width: 100%; margin-top: 25px;" onclick="window.location.href='../contact.html'">
+                        Request Detailed Microgrid Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Optimix Power Solutions.</p>
+        </div>
+    </footer>
+
+    <script src="../js/calculators.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* --- FILE: css/style.css --- */
+
+/* --- 1. RESET & BASIC SETUP --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #ffffff; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh;}
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
+
+/* --- 2. COLORS & VARIABLES --- */
+:root {
+    --brand-color: #0088cc;       /* Primary Blue */
+    --brand-hover: #006fb3;       /* Darker Blue */
+    --bg-dark: #0f172a;           /* Dark Footer/Section Background */
+    --text-muted: #94a3b8;        /* Light Grey Text */
+    
+    /* Icon Colors */
+    --icon-c1: #00e5ff; /* Cyan (P2X) */
+    --icon-c2: #76ff03; /* Neon Green (BESS) */
+    --icon-c3: #ffd600; /* Bright Yellow (Microgrid) */
+    --icon-c4: #ff5252; /* Coral Red (Capacity) */
+}
+
+/* --- 3. NAVIGATION BAR --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 60px; background-color: white; color: #333;
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-image { height: 50px; width: auto; }
+
+.logo-text { font-weight: 700; font-size: 1.2rem; color: var(--bg-dark); line-height: 1.1; }
+.logo-text span { display: block; font-size: 0.75rem; color: #64748b; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.nav-links { display: flex; gap: 25px; font-size: 0.9rem; font-weight: 600; color: #64748b; }
+.nav-links a:hover, .nav-links a.active { color: var(--brand-color); position: relative; }
+.nav-links a.active::after {
+    content: ''; position: absolute; width: 100%; height: 2px;
+    background-color: var(--brand-color); bottom: -24px; left: 0;
+}
+
+/* Dropdown Menu Styles */
+.dropdown { position: relative; display: inline-block; }
+.dropdown .dropbtn { cursor: pointer; padding: 24px 0; }
+.dropdown-content {
+    display: none; position: absolute; top: 100%; left: 0;
+    background-color: white; min-width: 220px; margin-top: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 8px;
+    z-index: 1000; padding: 10px 0;
+}
+.dropdown-content a {
+    color: #64748b; padding: 12px 20px; display: block; font-weight: 500;
+    transition: all 0.2s;
+}
+.dropdown-content a:hover {
+    background-color: #f8fafc; color: var(--brand-color); padding-left: 25px;
+}
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropbtn { color: var(--brand-color); }
+
+.btn-contact {
+    background-color: var(--brand-color); color: white; padding: 10px 24px;
+    border-radius: 6px; font-weight: 600; font-size: 0.9rem;
+}
+.btn-contact:hover { background-color: var(--brand-hover); }
+
+/* --- 4. HERO SECTION (For Index Page Only) --- */
+.hero {
+    position: relative; 
+    min-height: 100vh; /* Full screen height */
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    padding: 0 60px; 
+    margin-top: 0; 
+    
+    /* PATH LOGIC: Go UP from css folder (../), then DOWN into assets folder */
+    background: linear-gradient(to right, rgba(16, 44, 87, 0.95) 0%, rgba(16, 44, 87, 0.6) 100%),
+                url('../assets/websitebackground.png'); 
+    
+    background-size: cover; 
+    background-position: center;
+}
+
+.hero-content { max-width: 850px; padding-top: 80px; }
+
+/* --- 5. PAGE HEADER (For Sub-Pages like P2X, About) --- */
+.page-header {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    padding: 140px 60px 60px 60px; /* Top padding clears the fixed navbar */
+    text-align: center;
+}
+.page-header h1 { font-size: 3rem; margin-bottom: 15px; }
+.page-header p { font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin: 0 auto; }
+.page-header .badge { display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 20px; color: var(--icon-c1); }
+
+/* --- 6. HERO BUTTON GRID (The 4 Tabs) --- */
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); 
+    gap: 15px;
+    max-width: 550px;
+    margin-top: 30px;
+}
+
+.btn-hero {
+    display: flex; align-items: center; justify-content: flex-start;
+    gap: 12px; padding: 16px 24px; 
+    border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; 
+    background-color: var(--brand-color); color: white;
+    width: 100%; text-align: left;
+}
+
+.btn-hero:hover { 
+    transform: translateY(-2px); 
+    background-color: var(--brand-hover); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-hero i { font-size: 1.2rem; width: 24px; text-align: center; }
+
+/* Specific Button Icon Colors */
+.btn-c1 i { color: var(--icon-c1); }
+.btn-c2 i { color: var(--icon-c2); }
+.btn-c3 i { color: var(--icon-c3); }
+.btn-c4 i { color: var(--icon-c4); }
+
+/* --- 7. GENERAL SECTIONS --- */
+.section { padding: 80px 60px; color: #333; background: white; }
+.section-dark { padding: 80px 60px; color: white; background: var(--bg-dark); }
+h2.section-title { font-size: 2.5rem; margin-bottom: 20px; color: var(--bg-dark); }
+.section-dark h2.section-title { color: white; }
+
+/* --- 8. FOOTER --- */
+.footer {
+    background-color: var(--bg-dark); color: #cbd5e1;
+    padding: 60px 60px 30px 60px; margin-top: auto;
+    border-top: 1px solid #1e293b;
+}
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.footer-brand h3 { color: white; font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+.footer-brand h3 img { height: 40px; width: auto; }
+.footer-brand p { font-size: 0.9rem; line-height: 1.6; max-width: 300px; color: #94a3b8; }
+.footer-col h4 { color: white; font-size: 1rem; margin-bottom: 20px; font-weight: 600; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #94a3b8; font-size: 0.9rem; }
+.footer-col ul li a:hover { color: var(--icon-c1); padding-left: 5px; }
+.footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #64748b; }
+
+/* --- 9. RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .navbar, .hero, .section, .footer { padding-left: 30px; padding-right: 30px; }
+    .nav-links { display: none; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+    .cta-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; }
+    h1 { font-size: 2.5rem; }
+}

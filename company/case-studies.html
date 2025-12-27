@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimix Power - Case Studies</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../assets/finallogo.png" alt="Optimix Power" class="logo-image">
+            <div class="logo-text">Optimix Power <span>Future Energy Solutions</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="../services/p2x.html">P2X Simulator</a>
+                    <a href="../services/bess.html">BESS Revenue</a>
+                    <a href="../services/microgrid.html">Microgrid Design</a>
+                    <a href="../services/capacity-planning.html">Capacity Planning</a>
+                    <a href="../services/solar-wind.html">Solar & Wind</a>
+                </div>
+            </div>
+            <a href="case-studies.html" class="active">Case Studies</a>
+            <a href="../articles.html">Articles</a>
+        </div>
+        <a href="../contact.html" class="btn-contact">Contact Us</a>
+    </nav>
+
+    <header class="page-header">
+        <h1>Track Record</h1>
+        <p>Real-world applications of our optimization engines. From national-scale grid planning to industrial microgrids.</p>
+    </header>
+
+    <section class="section">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+
+            <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">Pilbara Green Hydrogen Pilot</h3>
+                    <span style="background: #00e5ff; color: #0f172a; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">AUSTRALIA</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> Designing a reliable 1,000 kg/day H2 facility in Western Australia. Standard sizing methods failed to account for "dark doldrums" (low solar days).
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> Using Mixed-Integer Linear Programming (MILP), we optimized the solar-to-battery ratio. The model found that oversizing Solar PV by 3.2x allowed for a 15% reduction in expensive battery CAPEX.
+                    </p>
+                    <div style="background: #f0f9ff; padding: 15px; border-left: 4px solid #0088cc; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #0088cc; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">LCOH Achieved: $4.12 / kg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">Industrial Microgrid Optimization</h3>
+                    <span style="background: #ffd600; color: #0f172a; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">SAUDI ARABIA</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> An industrial facility in Riyadh sought 100% renewable operations. Our analysis showed that chasing the final 5% of renewable penetration would double the project cost.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> We recommended a "95% Renewable" hybrid architecture. By allowing backup generators to run just 20 days/year during sandstorms, we slashed storage requirements.
+                    </p>
+                    <div style="background: #fefce8; padding: 15px; border-left: 4px solid #ffd600; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #d97706; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">$4M CAPEX Avoided (vs 100% RE)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">The National Hydrogen Atlas</h3>
+                    <span style="background: #00e5ff; color: #0f172a; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">EGYPT</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> Identifying optimal sites for 200 GW of Green Hydrogen capacity.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> Using a custom Python-Geospatial engine integrating WindPRO and PVsyst data, we mapped resource complementarity. We identified the "Golden Zone" in the Gulf of Suez where high winds at night complement daytime solar.
+                    </p>
+                    <div style="background: #f0f9ff; padding: 15px; border-left: 4px solid #0088cc; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #0088cc; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">Lowest LCOH Identified: $2.10 / kg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">BESS Revenue Stacking</h3>
+                    <span style="background: #76ff03; color: #0f172a; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">TEXAS (ERCOT)</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> Maximizing revenue for a 100MW/200MWh battery in the volatile Texas market.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> We implemented a "Double-Dip" strategy. The battery bids into ECRS (Contingency Reserve) from 2-5 PM to earn capacity payments, then discharges that same energy at 7 PM when prices hit $5,000/MWh.
+                    </p>
+                    <div style="background: #f0fdf4; padding: 15px; border-left: 4px solid #76ff03; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #16a34a; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">$425,000 Single-Day Revenue</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">2040 Capacity Expansion</h3>
+                    <span style="background: #ff5252; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">GRID STUDY</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> Planning Egypt's grid to meet 90 GW peak demand by 2040 while achieving Net Zero.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> Our study quantified the "Ideology Premium." We proved that a Tech-Neutral approach (including Nuclear & CCS) is significantly cheaper than a 100% Renewables-only mandate due to lower storage needs.
+                    </p>
+                    <div style="background: #fef2f2; padding: 15px; border-left: 4px solid #ff5252; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #b91c1c; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">EGP 95B/Year Savings Identified</span>
+                    </div>
+                </div>
+            </div>
+
+             <div class="case-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #0f172a; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 1.2rem;">Solar PV Engineering</h3>
+                    <span style="background: #a855f7; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">DESIGN</span>
+                </div>
+                <div style="padding: 30px;">
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Challenge:</strong> Detailed design and integration of a 3.3 MWp Solar System for a campus facility.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        <strong>Optimix Power Solution:</strong> We delivered construction-ready electrical designs, string layouts, and yield assessments (P50/P90). The design maximized roof utilization while ensuring seamless Medium Voltage interconnection.
+                    </p>
+                    <div style="background: #faf5ff; padding: 15px; border-left: 4px solid #a855f7; border-radius: 4px;">
+                        <span style="display: block; font-size: 0.85rem; color: #7e22ce; font-weight: 600;">KEY RESULT</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #0f172a;">11M EGP Annual Savings</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3><img src="../assets/finallogo.png" alt="Logo"> Optimix Power</h3>
+                <p>Research-backed optimization for the energy transition.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../services/p2x.html">P2X Simulator</a></li>
+                    <li><a href="../services/bess.html">Revenue Stacking</a></li>
+                    <li><a href="../services/microgrid.html">Microgrid Design</a></li>
+                    <li><a href="../services/capacity-planning.html">Capacity Planning</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Optimix Power Solutions.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
